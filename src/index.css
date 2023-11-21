@@ -14,10 +14,15 @@ body {
   background-color: oldlace;
 }
 
+img {
+  width: 100%;
+}
+
+
 h1 {
-  padding: 20px;
+  margin: 20px 0px;
 }
 
 h2 {
-  padding: 20px;
+  margin: 20px 0px;
 }
