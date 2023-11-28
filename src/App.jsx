@@ -11,15 +11,21 @@ import minus from "./assets/minus.png";
 
 function App() {
   function mostSold() {
-    console.log("Meest verkocht eerst");
+    const mostSoldOrderedList = inventory.sort((a,b) => b.sold - a.sold);
+    console.log("Meest verkocht eerst:");
+    console.log(mostSoldOrderedList);
   }
 
   function cheapest() {
-    console.log("Goedkoopste eerst");
+    const priceSortedList = inventory.sort((a, b,) => a.price - b.price);
+    console.log("Goedkoopste eerst:");
+    console.log(priceSortedList);
   }
 
   function mostSportCompatible() {
-    console.log("Meest geschikt voor sport eerst");
+    const sportsSortedList = inventory.sort((a,b) => b.refreshRate - a.refreshRate);
+    console.log("Meest geschikt voor sport eerst:");
+    console.log(sportsSortedList);
   }
 
   return (
