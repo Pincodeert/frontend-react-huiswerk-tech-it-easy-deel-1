@@ -5,7 +5,6 @@ import calculateTotalOriginalStock from "./helpers/calculateTotalOriginalStock.j
 import calculateCurrentStock from "./helpers/calculateCurrentStock.js";
 import generateTvTitel from "./helpers/generateTvTitel.js";
 import formatPrice from "./helpers/formatPrice.js";
-import generateScreenSizes from "./helpers/generateScreenSizes.js";
 import generateArrayOfScreenSizes from './helpers/generateScreenSizes.js';
 import check from "./assets/check.png";
 import minus from "./assets/minus.png";
@@ -68,10 +67,38 @@ function App() {
         </article>
       </section>
       <section>
-        <h2>Alle tv's</h2>
+        <h2>Alle tvs</h2>
         <button type="button" onClick={mostSold}>Meest verkocht eerst</button>
         <button type="button" onClick={cheapest}>Goedkoopste eerst</button>
         <button type="button" onClick={mostSportCompatible}>Meest geschikt voor sport eerst</button>
+
+        {inventory.map((tv) => {
+          return <h3 key={tv.type}>{tv.brand}</h3>
+        })}
+
+        {inventory.map((tv) => {
+          return <article key={tv.type} className="tv bestselling-tv">
+          <span className="tv-image">
+            <img src={tv.sourceImg} alt="afbeelding best verkochte tv"/>
+          </span>
+            <div className="tv-info">
+              <h3>{generateTvTitel(tv)}</h3>
+              <p>{formatPrice(tv)}</p>
+              <p>{generateArrayOfScreenSizes(tv)}</p>
+              <ul className="option-list">
+              {tv.options.map((option) => {
+                if(option.applicable){
+                  return <li key={'${tv.type}-${option.name}'}>
+                    <img src={check} alt="aanwezig icoon" className="icon"/>{option.name}</li>
+                } else {
+                  return <li key={'${tv.type}-${option.name}'}>
+                    <img src={minus} alt="niet-aanwezig icoon" className="icon"/>{option.name}</li>
+                }
+              })}
+                </ul>
+            </div>
+          </article>
+        })}
       </section>
     </main>
   )
