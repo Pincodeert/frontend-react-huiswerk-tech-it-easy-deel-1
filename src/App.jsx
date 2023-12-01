@@ -8,7 +8,8 @@ import formatPrice from "./helpers/formatPrice.js";
 import generateArrayOfScreenSizes from './helpers/generateScreenSizes.js';
 import check from "./assets/check.png";
 import minus from "./assets/minus.png";
-import DashboardItem from "./components/DashboardItem.jsx";
+import DashboardItem from "./components/dashboardItem/DashboardItem.jsx";
+import PageSection from "./components/pageSection/pageSection.jsx";
 
 function App() {
   function mostSold() {
@@ -46,41 +47,20 @@ function App() {
     <main className="page-container">
 
       <h1>Tech it Easy dashboard</h1>
-      <section>
-        <h2>Verkoopoverzicht</h2>
+      <PageSection sectionTitle="Verkoop Overzichtje Component">
         <div className="dashboard-container">
-          {/*<article className="dashboard-item item-soldTvs">*/}
-          {/*  <h3>Aantal verkochte producten</h3>*/}
-          {/*  /!*<p>{console.log("het totale aantal verkochte tv's is: " + calculateTotalSoldTvs(inventory))}</p>*!/*/}
-          {/*  <h2>{calculateTotalSoldTvs(inventory)}</h2>*/}
-          {/*</article>*/}
           <DashboardItem
               productDescription="Aantal verkochte producten"
               productAmount={calculateTotalSoldTvs(inventory)}
               productVarient="green"
               isBestSeller={true}
           />
-          {/*<DashboardItem*/}
-          {/*    productDescription="Testblok"*/}
-          {/*    productAmount={346}*/}
-          {/*    productVarient="red"*/}
-          {/*/>*/}
-          {/*<article className="dashboard-item item-originalStock">*/}
-          {/*  <h3>Aantal ingekochte producten</h3>*/}
-          {/*  /!*<p>{console.log("het totale aantal ingekochte tv's is: " + calculateTotalOriginalStock(inventory))}</p>*!/*/}
-          {/*  <h2>{calculateTotalOriginalStock(inventory)}</h2>*/}
-          {/*</article>*/}
           <DashboardItem
               productDescription="Aantal ingekochte producten"
               productAmount={calculateTotalOriginalStock(inventory)}
               productVarient="blue"
               isBestSeller={false}
           />
-          {/*<article className="dashboard-item item-currentStock">*/}
-          {/*  <h3>Aantal te verkopen producten</h3>*/}
-          {/*  /!*<p>{console.log("aantal te verkopen tv's is: " + calculateCurrentStock(inventory))}</p>*!/*/}
-          {/*  <h2>{calculateCurrentStock()}</h2>*/}
-          {/*</article>*/}
           <DashboardItem
               productDescription="Aantal te verkopen producten"
               productAmount={calculateCurrentStock()}
@@ -88,7 +68,29 @@ function App() {
               isBestSeller={false}
           />
         </div>
-      </section>
+      </PageSection>
+
+      {/*<section>        */}
+          {/*<article className="dashboard-item item-soldTvs">*/}
+          {/*  <h3>Aantal verkochte producten</h3>*/}
+          {/*  /!*<p>{console.log("het totale aantal verkochte tv's is: " + calculateTotalSoldTvs(inventory))}</p>*!/*/}
+          {/*  <h2>{calculateTotalSoldTvs(inventory)}</h2>*/}
+          {/*</article>*/}
+
+
+          {/*<article className="dashboard-item item-originalStock">*/}
+          {/*  <h3>Aantal ingekochte producten</h3>*/}
+          {/*  /!*<p>{console.log("het totale aantal ingekochte tv's is: " + calculateTotalOriginalStock(inventory))}</p>*!/*/}
+          {/*  <h2>{calculateTotalOriginalStock(inventory)}</h2>*/}
+          {/*</article>*/}
+
+          {/*<article className="dashboard-item item-currentStock">*/}
+          {/*  <h3>Aantal te verkopen producten</h3>*/}
+          {/*  /!*<p>{console.log("aantal te verkopen tv's is: " + calculateCurrentStock(inventory))}</p>*!/*/}
+          {/*  <h2>{calculateCurrentStock()}</h2>*/}
+          {/*</article>*/}
+      {/*</section>*/}
+
       <section className="bestselling-container">
         <h2>Best verkochte tv</h2>
         <article className="tv bestselling-tv">
