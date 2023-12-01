@@ -1,0 +1,17 @@
+.items-green {
+    border: 1px solid #2D9D8F;
+    background-color: lightgreen;
+    color: green;
+}
+
+.items-blue {
+    border: 1px solid #2A9D2F;
+    background-color: aqua;
+    color: darkslateblue;
+}
+
+.items-red {
+    border: 1px solid crimson;
+    background-color: indianred;
+    color: darkred;
+}
