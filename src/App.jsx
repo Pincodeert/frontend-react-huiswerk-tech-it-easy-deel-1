@@ -58,6 +58,7 @@ function App() {
               productDescription="Aantal verkochte producten"
               productAmount={calculateTotalSoldTvs(inventory)}
               productVarient="green"
+              isBestSeller={true}
           />
           {/*<DashboardItem*/}
           {/*    productDescription="Testblok"*/}
@@ -73,6 +74,7 @@ function App() {
               productDescription="Aantal ingekochte producten"
               productAmount={calculateTotalOriginalStock(inventory)}
               productVarient="blue"
+              isBestSeller={false}
           />
           {/*<article className="dashboard-item item-currentStock">*/}
           {/*  <h3>Aantal te verkopen producten</h3>*/}
@@ -83,6 +85,7 @@ function App() {
               productDescription="Aantal te verkopen producten"
               productAmount={calculateCurrentStock()}
               productVarient="red"
+              isBestSeller={false}
           />
         </div>
       </section>

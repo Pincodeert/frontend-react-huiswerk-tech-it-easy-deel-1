@@ -1,4 +1,5 @@
 import './DashboardItem.css'
+import outOfStock from '../assets/out-of-stock.png'
 
 //Een component bevat altijd:
 //1. Functie declaratie (met Hoofdletter!)
@@ -14,11 +15,9 @@ import './DashboardItem.css'
 //6. Geef de properties (geef ze ook een waarde) vanuit App.jsx mee aan het component
 
 
-
-import calculateTotalOriginalStock from "../helpers/calculateTotalOriginalStock.js";
-import inventory from "../constants/inventory.js";
-
 function DashboardItem(props) {
+    // igv geen props wil gebruiken maar destructuren: (nb ook de props. overal weghalen)
+    // function DashboardItem({productDescription, productAmount, productVarient, IsBestseller}) {} NB en de
     console.log(props);
 
     let classNameString = "dashboard-item";
@@ -42,6 +41,8 @@ function DashboardItem(props) {
             <h3>{props.productDescription}</h3>
             {/*<p>{console.log("het totale aantal ingekochte tv's is: " + calculateTotalOriginalStock(inventory))}</p>*/}
             <h2>{props.productAmount}</h2>
+            {/*{props.isBestSeller === true ? <img src={outOfStock} alt="Out of stock"/> : <p>Nog over: {props.productAmount}</p>}*/}
+            {props.isBestSeller && <img src={outOfStock} alt="Out of stock"/>}
         </article>
     )
 }
