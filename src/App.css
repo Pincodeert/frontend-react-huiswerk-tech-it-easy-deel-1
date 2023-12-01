@@ -32,23 +32,23 @@
     flex-shrink: 1;
 }
 
-.item-soldTvs {
-    border: 1px solid #2D9D8F;
-    background-color: lightgreen;
-    color: green;
-}
+/*.item-soldTvs {*/
+/*    border: 1px solid #2D9D8F;*/
+/*    background-color: lightgreen;*/
+/*    color: green;*/
+/*}*/
 
-.item-originalStock {
-    border: 1px solid #2A9D2F;
-    background-color: aqua;
-    color: darkslateblue;
-}
+/*.item-originalStock {*/
+/*    border: 1px solid #2A9D2F;*/
+/*    background-color: aqua;*/
+/*    color: darkslateblue;*/
+/*}*/
 
-.item-currentStock {
-    border: 1px solid crimson;
-    background-color: indianred;
-    color: darkred;
-}
+/*.item-currentStock {*/
+/*    border: 1px solid crimson;*/
+/*    background-color: indianred;*/
+/*    color: darkred;*/
+/*}*/
 
 .tv {
 
