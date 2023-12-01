@@ -28,6 +28,19 @@ function App() {
     console.log(sportsSortedList);
   }
 
+  //bonus opdracht
+  function biggestScreensizeAvailable() {
+   inventory.map((tv) => {
+      tv.availableSizes.sort((a,b) => b.availableSizes - a.availableSizes);
+
+    });
+
+
+
+    console.log("biggest screensize available:");
+    //console.log(biggestScreensizeList);
+  }
+
   return (
     <main className="page-container">
 
@@ -37,17 +50,17 @@ function App() {
         <div className="dashboard-container">
           <article className="dashboard-item item-soldTvs">
             <h3>Aantal verkochte producten</h3>
-            <p>{console.log("het totale aantal verkochte tv's is: " + calculateTotalSoldTvs(inventory))}</p>
+            {/*<p>{console.log("het totale aantal verkochte tv's is: " + calculateTotalSoldTvs(inventory))}</p>*/}
             <h2>{calculateTotalSoldTvs(inventory)}</h2>
           </article>
           <article className="dashboard-item item-originalStock">
             <h3>Aantal ingekochte producten</h3>
-            <p>{console.log("het totale aantal ingekochte tv's is: " + calculateTotalOriginalStock(inventory))}</p>
+            {/*<p>{console.log("het totale aantal ingekochte tv's is: " + calculateTotalOriginalStock(inventory))}</p>*/}
             <h2>{calculateTotalOriginalStock(inventory)}</h2>
           </article>
           <article className="dashboard-item item-currentStock">
             <h3>Aantal te verkopen producten</h3>
-            <p>{console.log("aantal te verkopen tv's is: " + calculateCurrentStock(inventory))}</p>
+            {/*<p>{console.log("aantal te verkopen tv's is: " + calculateCurrentStock(inventory))}</p>*/}
             <h2>{calculateCurrentStock()}</h2>
           </article>
         </div>
@@ -77,6 +90,7 @@ function App() {
         <button type="button" onClick={mostSold}>Meest verkocht eerst</button>
         <button type="button" onClick={cheapest}>Goedkoopste eerst</button>
         <button type="button" onClick={mostSportCompatible}>Meest geschikt voor sport eerst</button>
+        <button type="button" onClick={biggestScreensizeAvailable}>Groots beschikbare schermafmeting:</button>
 
         {inventory.map((tv) => {
           return <h3 key={tv.type}>{tv.brand}</h3>
